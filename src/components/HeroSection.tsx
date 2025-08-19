@@ -16,7 +16,7 @@ export const HeroSection = () => {
       </h1>
       
       <h2 className="text-xl md:text-2xl text-white/90 mb-6 font-medium">
-        Your Sophisticated AI Guide to EO Goa
+        Your AI Guide to EO Goa
       </h2>
       
       <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
