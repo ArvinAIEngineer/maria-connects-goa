@@ -48,10 +48,10 @@ All colors MUST be HSL.
     --chat-bubble-maria: 35 35% 95%;
     --chat-bubble-maria-foreground: 25 15% 25%;
 
-    /* Luxury gradients */
-    --gradient-sunset: linear-gradient(135deg, hsl(15 65% 80%), hsl(5 75% 75%), hsl(25 55% 85%));
+    /* Luxury gradients with better contrast */
+    --gradient-sunset: linear-gradient(135deg, hsl(15 35% 25%), hsl(5 45% 35%), hsl(25 25% 45%));
     --gradient-elegant: linear-gradient(135deg, hsl(35 35% 95%), hsl(35 25% 88%));
-    --gradient-header: linear-gradient(180deg, hsl(35 45% 97%), hsl(35 35% 94%));
+    --gradient-header: linear-gradient(180deg, hsl(35 25% 88%), hsl(35 35% 92%));
 
     /* Sophisticated shadows */
     --shadow-elegant: 0 4px 20px hsl(15 45% 75% / 0.15);
