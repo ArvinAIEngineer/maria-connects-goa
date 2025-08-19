@@ -26,7 +26,7 @@ export const ChatInterface = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hello darling! I'm Maria, your sophisticated insider to everything EO Goa. I know all the who's who, what's happening, and how to get you connected with Goa's most elite entrepreneurs. What would you like to know about our fabulous community?",
+      text: "Hello! I'm Maria, your knowledgeable guide to everything EO Goa. I have extensive insights into our distinguished entrepreneurial community, upcoming events, and networking opportunities. How may I assist you today?",
       isUser: false,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
