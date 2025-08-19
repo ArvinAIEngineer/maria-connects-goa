@@ -11,19 +11,19 @@ export const HeroSection = () => {
         </Avatar>
       </div>
       
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-sunset bg-clip-text text-transparent">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
         Meet Maria
       </h1>
       
-      <h2 className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium">
+      <h2 className="text-xl md:text-2xl text-white/90 mb-6 font-medium">
         Your Sophisticated AI Guide to EO Goa
       </h2>
       
-      <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-        Hello darling! I'm your insider connection to Goa's most elite entrepreneurial community. 
-        Whether you're curious about membership, upcoming events, or just want to know what's happening 
-        in our fabulous business circle, I'm here to help with all the sophistication and warmth 
-        you'd expect from a true Goa socialite.
+      <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+        Hello! I'm your knowledgeable guide to Goa's distinguished entrepreneurial community. 
+        Whether you're curious about membership, upcoming events, or networking opportunities, 
+        I'm here to assist you with professionalism and the warm hospitality 
+        you'd expect from a sophisticated Goa business insider.
       </p>
     </div>
   );
