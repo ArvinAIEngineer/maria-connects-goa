@@ -22,8 +22,7 @@ export const HeroSection = () => {
       <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
         Hello! I'm your knowledgeable guide to Goa's distinguished entrepreneurial community. 
         Whether you're curious about membership, upcoming events, or networking opportunities, 
-        I'm here to assist you with professionalism and the warm hospitality 
-        you'd expect from a sophisticated Goa business insider.
+        Ask, Away!
       </p>
     </div>
   );
