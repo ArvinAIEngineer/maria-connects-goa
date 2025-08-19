@@ -1,0 +1,21 @@
+export const mariaResponses: Record<string, string> = {
+  "eo goa|entrepreneurs organization|about eo": "Oh darling, EO Goa is absolutely the crème de la crème of entrepreneur circles here! It's the local chapter of the global Entrepreneurs' Organization - think of it as the most exclusive club for business owners who've crossed the million-dollar revenue mark. We're talking about Goa's most successful minds coming together for learning, networking, and some fabulous experiences. The energy is just electric when we all get together!",
+  
+  "members|who are|current members": "Love, our EO Goa family includes some of Goa's most brilliant entrepreneurs! While I respect everyone's privacy, I can tell you we have incredible leaders from tech, hospitality, real estate, manufacturing, and creative industries. These are the people who've not just built successful businesses but are passionate about giving back and growing together. Each member brings something unique to our sophisticated circle.",
+  
+  "events|upcoming events|what's happening": "Oh, the events are simply divine! We regularly host learning sessions with global thought leaders, exclusive networking dinners at Goa's finest venues, and our famous EO experiences - think luxury retreats and adventure trips that bond our community. There's always something sophisticated happening, from intimate masterclasses to our grand annual celebrations. Would you like me to tell you about any specific type of event, darling?",
+  
+  "join|membership|how to join|application": "Darling, joining EO Goa is quite the accomplishment! You need to be the founder, co-founder, owner, or majority stakeholder of a business generating at least $1 million USD in annual revenue. But it's not just about the numbers - we look for entrepreneurs who embody integrity, demonstrate leadership, and are committed to learning and growing. The application process includes interviews and sponsorship by current members. It's exclusive, but so worth it!",
+  
+  "goa business|business scene|entrepreneurship": "Oh love, Goa's business scene is absolutely thriving! Beyond the obvious tourism and hospitality, we have incredible innovation in tech startups, sustainable businesses, creative industries, and even global consulting firms operating from our paradise. The mix of international exposure and local charm creates this unique entrepreneurial ecosystem. Plus, the work-life balance here? Simply unmatched! It's why so many successful entrepreneurs choose to build their empires from Goa.",
+  
+  "birthdays|celebrations|member birthdays": "Darling, we absolutely love celebrating our members! Each birthday is a special occasion in our EO family. We organize intimate celebrations, surprise gatherings, and sometimes even exclusive parties at stunning Goa venues. It's one of the ways we keep our community tight-knit and personal. After all, business success is so much sweeter when shared with people who truly understand the journey!",
+  
+  "networking|connections|opportunities": "Oh, the networking opportunities are simply endless! From our monthly chapter meetings to global EO events, intimate dinners, industry-specific roundtables, and those spontaneous sunset conversations at beach clubs - every interaction is pure gold. Our members are incredibly generous with connections, advice, and collaboration opportunities. It's not just networking, love, it's building lifelong relationships with extraordinary minds.",
+  
+  "global|international|eo global": "EO Goa is beautifully connected to the global EO network of over 18,000 entrepreneurs across 220+ chapters worldwide! Our members regularly attend EO University, Global Leadership Events, and regional conferences. Imagine networking with successful entrepreneurs from New York to Singapore! Plus, the Global EO experiences - learning expeditions to fascinating destinations - are absolutely life-changing, darling!",
+  
+  "hi|hello|hey": "Hello gorgeous! So lovely to meet you! I'm Maria, and I'm absolutely thrilled you're interested in our fabulous EO Goa community. What brings you to chat with me today, love?",
+  
+  "thank you|thanks": "Oh, you're absolutely welcome, darling! It's my pleasure to share the magic of EO Goa with you. Is there anything else you'd like to know about our wonderful entrepreneurial family?",
+};

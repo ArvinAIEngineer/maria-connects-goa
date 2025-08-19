@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'chat-bubble': {
+					user: 'hsl(var(--chat-bubble-user))',
+					'user-foreground': 'hsl(var(--chat-bubble-user-foreground))',
+					maria: 'hsl(var(--chat-bubble-maria))',
+					'maria-foreground': 'hsl(var(--chat-bubble-maria-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +90,42 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'typing': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.4' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: 'var(--shadow-elegant)' },
+					'50%': { boxShadow: 'var(--shadow-glow)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in-up': 'fade-in-up 0.6s ease-out',
+				'typing': 'typing 1.4s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-sunset': 'var(--gradient-sunset)',
+				'gradient-elegant': 'var(--gradient-elegant)',
+				'gradient-header': 'var(--gradient-header)'
+			},
+			boxShadow: {
+				'elegant': 'var(--shadow-elegant)',
+				'chat': 'var(--shadow-chat)',
+				'glow': 'var(--shadow-glow)'
 			}
 		}
 	},

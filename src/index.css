@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Maria EO Goa Chatbot Design System 
+Sophisticated beach luxury meets business elegance
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Luxury Goa-inspired color palette */
+    --background: 35 45% 97%;
+    --foreground: 25 15% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 35 35% 95%;
+    --card-foreground: 25 15% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 35% 95%;
+    --popover-foreground: 25 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Rose gold primary */
+    --primary: 15 45% 75%;
+    --primary-foreground: 35 45% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Champagne secondary */
+    --secondary: 35 25% 88%;
+    --secondary-foreground: 25 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Coral accent */
+    --accent: 5 75% 75%;
+    --accent-foreground: 35 45% 97%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Sophisticated muted tones */
+    --muted: 35 15% 92%;
+    --muted-foreground: 25 10% 55%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 35 45% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 88%;
+    --input: 35 25% 90%;
+    --ring: 15 45% 75%;
 
-    --radius: 0.5rem;
+    /* Chat-specific colors */
+    --chat-bubble-user: 15 45% 75%;
+    --chat-bubble-user-foreground: 35 45% 97%;
+    --chat-bubble-maria: 35 35% 95%;
+    --chat-bubble-maria-foreground: 25 15% 25%;
+
+    /* Luxury gradients */
+    --gradient-sunset: linear-gradient(135deg, hsl(15 65% 80%), hsl(5 75% 75%), hsl(25 55% 85%));
+    --gradient-elegant: linear-gradient(135deg, hsl(35 35% 95%), hsl(35 25% 88%));
+    --gradient-header: linear-gradient(180deg, hsl(35 45% 97%), hsl(35 35% 94%));
+
+    /* Sophisticated shadows */
+    --shadow-elegant: 0 4px 20px hsl(15 45% 75% / 0.15);
+    --shadow-chat: 0 2px 12px hsl(25 15% 25% / 0.08);
+    --shadow-glow: 0 0 30px hsl(15 65% 80% / 0.3);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
