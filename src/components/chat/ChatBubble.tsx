@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import mariaProfile from "@/assets/maria-profile.jpg";
+import ReactMarkdown from "react-markdown";
 
 interface ChatBubbleProps {
   message: string;
@@ -17,13 +18,15 @@ export const ChatBubble = ({ message, isUser, timestamp }: ChatBubbleProps) => {
         </Avatar>
       )}
       <div
-        className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-chat ${
+        className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-chat text-left ${
           isUser
             ? 'bg-chat-bubble-user text-chat-bubble-user-foreground ml-auto'
             : 'bg-chat-bubble-maria text-chat-bubble-maria-foreground'
         }`}
       >
-        <p className="text-sm leading-relaxed">{message}</p>
+        <div className="text-sm leading-relaxed markdown-content">
+            <ReactMarkdown>{message}</ReactMarkdown>
+        </div>
         {timestamp && (
           <p className="text-xs opacity-70 mt-1">{timestamp}</p>
         )}
