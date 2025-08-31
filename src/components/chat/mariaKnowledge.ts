@@ -1,41 +1,127 @@
-export const mariaResponses: Record<string, string> = {
-  "eo goa|entrepreneurs organization|about eo": "Oh darling, EO Goa is absolutely the crème de la crème of entrepreneur circles here! It's the local chapter of the global Entrepreneurs' Organization - think of it as the most exclusive club for business owners who've crossed the million-dollar revenue mark. We're talking about Goa's most successful minds coming together for learning, networking, and some fabulous experiences. The energy is just electric when we all get together!",
-  
-  "members|who are|current members": "Love, our EO Goa family includes some of Goa's most brilliant entrepreneurs! We have amazing leaders like Ali Haji, Amit Palekar, Asheen Laljee, Gaurav Sapra, Sourabh Chattopadhyay, and so many more incredible minds from tech, hospitality, real estate, manufacturing, and creative industries. These are the people who've not just built successful businesses but are passionate about giving back and growing together. Each member brings something unique to our sophisticated circle.",
-  
-  "events|upcoming events|what's happening|2025|2026": "Oh darling, we have the most incredible lineup! Coming up in July 2025, we have our Board Meeting on the 16th at Amado Collective, and then 'Real Talks: F*Ups That Fueled Us' on the 30th at Elanos - it's going to be absolutely riveting! In August, we have a fabulous learning session with Amit Jain from Carlyle Asia, and September brings us Captain Raghu Raman's 'Leadership from 26,000 feet' workshop. And wait until you hear about our 2026 calendar - we have Malta retreat in April, workshops on bio-mimicry, crisis management with DG Rakesh Maria, and even a surprise WOW event in May! Every event is pure sophistication, love.",
-  
-  "july 2025|board meeting|real talks": "July is absolutely packed with excitement! Our Board Meeting is on Wednesday, 16th July at 6:30 PM at Amado Collective - Ali is leading that one beautifully. Then on the 30th, we have 'Real Talks: F*Ups That Fueled Us' at 7:00 PM at Elanos, Miramar - Gaurav is organizing this gem. It's going to be so refreshing to hear authentic stories from our brilliant entrepreneurs about their learning journeys!",
-  
-  "august 2025|amit jain|learning session": "August brings us something truly special, darling! We have a learning session with Amit Jain on Friday, 22nd August. He's the Head of Carlyle Asia - the second-largest PE fund globally that has invested over USD 8 billion in India! Sourabh is organizing this exclusive session. The venue and exact time are still being finalized, but trust me, this is going to be absolutely extraordinary!",
-  
-  "september 2025|captain raghu raman|leadership": "September is going to be phenomenal! Captain Raghu Raman is bringing us 'Leadership from 26,000 feet' on Friday, 19th September. It's both a workshop and a talk - imagine learning leadership from someone who's seen it from the highest levels! Sourabh is our point person for this incredible experience.",
-  
-  "malta retreat|chapter retreat 2026": "Oh my goodness, the Malta retreat is going to be absolutely divine! It's scheduled for 23-27 April 2026, and Vidur is organizing this spectacular getaway. Malta with our EO family? Picture azure waters, historic charm, and the most meaningful connections with fellow entrepreneurs. It's going to be pure magic, darling!",
-  
-  "birthdays|member birthdays|celebrations": "We absolutely adore celebrating our family! Let me share some upcoming celebrations - Ali Haji's birthday is on 24th November, Aakash Khaunte celebrates on 6th July, and Asheen Laljee on 11th April. We also celebrate beautiful milestones like Gaurang and Shibani Suctancar's anniversary on 1st February, and Ali and Richa's on 11th November. Every celebration is a chance to show our love and appreciation for each other!",
-  
-  "workshops|learning|ai productivity|varun chawla": "Our learning sessions are absolutely world-class! We have Varun Chawla's AI Productivity workshop coming up on 13th December 2025, a Bio Mimicry workshop with Anjan Prakash in January 2026, and crisis management with DG Rakesh Maria in March 2026. Plus, we have family-focused sessions like Pallavi Chaturvedi's workshop on raising happy, confident children. Learning never stops in our community, love!",
-  
-  "slp|spouse leadership program|shibani": "The Spouse Leadership Program is absolutely beautiful! Shibani leads our SLP with such grace and wisdom. We have wonderful events like 'Scent of a Woman' social on 14th August at Suctancar residence, drum circles, vision board exercises, nature walks around Diwali, and even important talks on topics like coping with menopause. It's all about supporting our amazing spouses and creating meaningful connections.",
-  
-  "myeo|asheen|book club|poker": "MyEO is fantastic! Asheen leads this beautifully, and we have such diverse activities. There's the book club meeting on 11th August 2026 at Kaizen with Priya Agarwal as champion, poker tournaments featuring our champion Aakash Khaunte, and even stars soirées with Asheen. Between October 24th and November 7th, 2026, we're celebrating our poker champion - it's going to be absolutely thrilling!",
-  
-  "family events|picnic|christmas|kids": "Our family events are pure joy! We have a Family Picnic on 8th February 2026, Christmas with Kids on 24th December 2026, Holi Socials on 4th March, and Diwali celebrations in November. Gaurav and Shibani organize these with such love and attention to detail. There's also 'Learning with Kids' nature walks during Diwali holidays - it's beautiful seeing our little ones learn and play together!",
-  
-  "photos|videos|memories|drive": "Oh darling, we capture all our beautiful moments! For our recent Pickleball Social and Potluck, all the gorgeous photos and videos are at: https://drive.google.com/drive/folders/10XJbBH-cJmVzvxFMAOu3WTaHbpr_0dxe. And our stunning Gala 2025 memories are preserved at: https://drive.google.com/drive/folders/1L4GKLd9KN-tyW60yFWPJk1xdEzLtF3Rn. Every moment is precious with our EO family!",
-  
-  "president gala|ali haji|june 2026": "The President's Gala in June 2026 is going to be absolutely spectacular! Ali is organizing this prestigious event, and knowing his impeccable taste and attention to detail, it's going to be the social event of the year. Mark your calendars, darling - this is going to be unforgettable!",
-  
-  "join|membership|how to join|application": "Darling, joining EO Goa is quite the accomplishment! You need to be the founder, co-founder, owner, or majority stakeholder of a business generating at least $1 million USD in annual revenue. But it's not just about the numbers - we look for entrepreneurs who embody integrity, demonstrate leadership, and are committed to learning and growing. The application process includes interviews and sponsorship by current members. It's exclusive, but so worth it!",
-  
-  "goa business|business scene|entrepreneurship": "Oh love, Goa's business scene is absolutely thriving! Beyond the obvious tourism and hospitality, we have incredible innovation in tech startups, sustainable businesses, creative industries, and even global consulting firms operating from our paradise. The mix of international exposure and local charm creates this unique entrepreneurial ecosystem. Plus, the work-life balance here? Simply unmatched! It's why so many successful entrepreneurs choose to build their empires from Goa.",
-  
-  "networking|connections|opportunities": "Oh, the networking opportunities are simply endless! From our monthly chapter meetings to global EO events, intimate dinners, industry-specific roundtables, and those spontaneous sunset conversations at beach clubs - every interaction is pure gold. Our members are incredibly generous with connections, advice, and collaboration opportunities. It's not just networking, love, it's building lifelong relationships with extraordinary minds.",
-  
-  "global|international|eo global": "EO Goa is beautifully connected to the global EO network of over 18,000 entrepreneurs across 220+ chapters worldwide! Our members regularly attend EO University, Global Leadership Events, and regional conferences. We have RIE Pune from 8-11 January 2026, and other regional events like PM2. Imagine networking with successful entrepreneurs from New York to Singapore! Plus, the Global EO experiences are absolutely life-changing, darling!",
-  
-  "hi|hello|hey": "Hello gorgeous! So lovely to meet you! I'm Maria, and I'm absolutely thrilled you're interested in our fabulous EO Goa community. What brings you to chat with me today, love?",
-  
-  "thank you|thanks": "Oh, you're absolutely welcome, darling! It's my pleasure to share the magic of EO Goa with you. Is there anything else you'd like to know about our wonderful entrepreneurial family?",
+// --- Helper for converting month names to numbers ---
+const monthMap: { [key: string]: number } = {
+  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
+  july: 7, august: 8, september: 9, october: 10, november: 11, december: 12
 };
+
+// --- Structured Member Data (for birthdays, etc.) ---
+export const membersData = [
+  { name: 'Aakash Khaunte', birthMonth: 7, birthDay: 6 },
+  { name: 'Aparna Khaunte (Spouse)', birthMonth: 7, birthDay: 14 },
+  { name: 'Ali Haji', birthMonth: 11, birthDay: 24 },
+  { name: 'Richa Haji (Spouse)', birthMonth: 5, birthDay: 13 },
+  { name: 'Amit Palekar', birthMonth: 5, birthDay: 10 },
+  { name: 'Rasika Palekar (Spouse)', birthMonth: 9, birthDay: 27 },
+  { name: 'Anirudh Agrawal', birthMonth: 3, birthDay: 15 },
+  { name: 'Richa Agrawal (Spouse)', birthMonth: 10, birthDay: 28 },
+  { name: 'Anuj Kurade', birthMonth: 11, birthDay: 20 },
+  { name: 'Arpit Agarwal', birthMonth: 12, birthDay: 8 },
+  { name: 'Arushi Agarwal (Spouse)', birthMonth: 9, birthDay: 30 },
+  { name: 'Asheen Laljee', birthMonth: 4, birthDay: 11 },
+  { name: 'Hanif Laljee (Spouse)', birthMonth: 1, birthDay: 4 },
+  { name: 'Ashwin Khalap', birthMonth: 10, birthDay: 25 },
+  { name: 'Attreya Sawantt', birthMonth: 4, birthDay: 24 },
+  { name: 'Tanvi Sawantt (Spouse)', birthMonth: 6, birthDay: 17 },
+  { name: 'Atul Pai Kane', birthMonth: 3, birthDay: 7 },
+  { name: 'Gaurapriya Pai Kane (Spouse)', birthMonth: 10, birthDay: 31 },
+  { name: 'Gaurang Suctancar', birthMonth: 6, birthDay: 4 },
+  { name: 'Shibani Suctancar (Spouse)', birthMonth: 7, birthDay: 26 },
+  { name: 'Nath Laud', birthMonth: 3, birthDay: 25 },
+  { name: 'Kalyani Laud (Spouse)', birthMonth: 6, birthDay: 2 },
+  { name: 'Neha Bhasin', birthMonth: 11, birthDay: 14 },
+  { name: 'Harshvardhan Sharma (Spouse)', birthMonth: 11, birthDay: 26 },
+  { name: 'Oscar De Lima Pereira', birthMonth: 11, birthDay: 25 },
+  { name: 'Rahul Khetrapal', birthMonth: 6, birthDay: 14 },
+  { name: 'Prerna Khetrapal (Spouse)', birthMonth: 5, birthDay: 13 },
+  { name: 'Ridhima Singh', birthMonth: 5, birthDay: 31 },
+  { name: 'Angad Singh (Spouse)', birthMonth: 3, birthDay: 4 },
+  { name: 'Sandeep Verenkar', birthMonth: 12, birthDay: 6 },
+  { name: 'Siddharth Goel', birthMonth: 8, birthDay: 12 },
+  { name: 'Radha Goel (Spouse)', birthMonth: 12, birthDay: 8 },
+  { name: 'Sunaina Gera', birthMonth: 8, birthDay: 16 },
+  { name: 'Tony Dewan', birthMonth: 1, birthDay: 1 },
+  { name: 'Vartan Mathias', birthMonth: 10, birthDay: 1 },
+  { name: 'Vivin Mathias (Spouse)', birthMonth: 6, birthDay: 12 },
+  { name: 'Varun Chawla', birthMonth: 3, birthDay: 3 },
+  { name: 'Samvedita Chawla (Spouse)', birthMonth: 3, birthDay: 25 },
+  { name: 'Venkat Muppana', birthMonth: 3, birthDay: 17 },
+  { name: 'Sneha Muppana (Spouse)', birthMonth: 10, birthDay: 4 },
+  { name: 'Vidur Gupta', birthMonth: 3, birthDay: 22 },
+  { name: 'Dhruv Rajani', birthMonth: 7, birthDay: 10 },
+  { name: 'Stuti Rajani (Spouse)', birthMonth: 5, birthDay: 6 },
+  { name: 'Harsh Rajani', birthMonth: 1, birthDay: 10 },
+  { name: 'Priya Coulagi Bakshi', birthMonth: 2, birthDay: 16 },
+  { name: 'Gaurav Bakshi (Spouse)', birthMonth: 9, birthDay: 30 },
+  { name: 'Gaurav Sapra', birthMonth: 10, birthDay: 1 },
+  { name: 'Divya Sapra (Spouse)', birthMonth: 12, birthDay: 22 },
+  { name: 'Rahul Agarwal', birthMonth: 8, birthDay: 13 },
+  { name: 'Priya Agarwal (Spouse)', birthMonth: 8, birthDay: 25 },
+  { name: 'Kavita Coulagi', birthMonth: 1, birthDay: 27 },
+  { name: 'Vikram Devraj (Spouse)', birthMonth: 4, birthDay: 19 },
+  { name: 'Sourabh Chattopadhyay', birthMonth: 5, birthDay: 30 },
+  { name: 'Srimoyi Bhattacharya (Spouse)', birthMonth: 4, birthDay: 24 },
+  { name: 'Vikram Puri', birthMonth: 12, birthDay: 12 },
+  { name: 'Shweta Puri (Spouse)', birthMonth: 8, birthDay: 27 },
+  { name: 'Mangish Kakodkar', birthMonth: 5, birthDay: 2 },
+  { name: 'Mayura Kakodkar (Spouse)', birthMonth: 4, birthDay: 11 },
+  { name: 'Nitin Bhatia', birthMonth: 5, birthDay: 23 },
+  { name: 'Karen Bhatia', birthMonth: 8, birthDay: 28 },
+  { name: 'Haresh Abichandani', birthMonth: 3, birthDay: 17 },
+  { name: 'Taruna Abichandani (Spouse)', birthMonth: 1, birthDay: 31 },
+  { name: 'Sandeep Agarwal', birthMonth: 4, birthDay: 27 },
+  { name: 'Shruti Agarwal (Spouse)', birthMonth: 12, birthDay: 10 },
+  { name: 'Rijul Bharat', birthMonth: 10, birthDay: 23 },
+  { name: 'Varun Jalan', birthMonth: 1, birthDay: 29 },
+  { name: 'Gopal Patwardhan', birthMonth: 3, birthDay: 31 },
+  { name: 'Padmaraje Patwardhan (Spouse)', birthMonth: 10, birthDay: 27 },
+];
+
+// --- Structured Event Data ---
+export const eventsData = [
+  { year: 2025, month: 7, day: 16, name: "Board Meeting", details: "Led by Ali at Amado Collective, 6:30 PM. (Complete)" },
+  { year: 2025, month: 7, day: 30, name: "Real Talks: F*Ups That Fueled Us", details: "Member Engagement by Gaurav at Elanos, Miramar, 7:00 PM. (On Track)" },
+  { year: 2025, month: 8, day: 22, name: "Learning session with Amit Jain", details: "Learning event by Sourabh. Features Head of Carlyle Asia. (Time/Venue TBD)" },
+  { year: 2025, month: 8, day: 14, name: "SLP Social – Scent of a Woman", details: "SLP event by Shibani at Suctancar residence. (Time TBD)" },
+  { year: 2025, month: 9, day: 19, name: "Leadership from 26,000 feet workshop", details: "Learning workshop and talk with Captain Raghu Raman, by Sourabh. (Time/Venue TBD)" },
+  { year: 2025, month: 11, day: 0, name: "Learning workshop", details: "3–4 hour morning workshop led by Sourabh. (Date/Time/Venue TBD)" },
+  { year: 2025, month: 12, day: 13, name: "Day workshop on AI Productivity", details: "Learning session with Varun Chawla, by Sourabh. (Date is Dec 13 or Nov 22, Time/Venue TBD)" },
+  { year: 2026, month: 1, day: 31, name: "Workshop on Bio Mimicry", details: "Learning session with Anjan Prakash, by Sourabh. (Time/Venue TBD)" },
+  { year: 2026, month: 1, day: 0, name: "Vision Board Exercise with Guided Meditation", details: "SLP event by Shibani at Kaizen. (Date/Time TBD)" },
+  { year: 2026, month: 1, day: 8, name: "RIE Pune", details: "Regional Event from Jan 8-11, organized by Ali." },
+  { year: 2026, month: 2, day: 8, name: "Family Picnic", details: "Member Engagement by Gaurav and Shibani. (Time/Venue TBD)" },
+  { year: 2026, month: 2, day: 20, name: "Learning talk with Anil Lamba", details: "Tentative learning event by Sourabh. (Time/Venue TBD)" },
+  { year: 2026, month: 3, day: 4, name: "Holi Socials", details: "Member Engagement by Gaurav. (Time/Venue TBD)" },
+  { year: 2026, month: 3, day: 20, name: "Crisis Management and Negotiation", details: "Learning presentation with DG Rakesh Maria, by Sourabh. (Time/Venue TBD)" },
+  { year: 2026, month: 3, day: 0, name: "Pickleball Tournament Champion – Gaurav Sapra", details: "MyEO event led by Asheen. (Date/Venue TBD)" },
+  { year: 2026, month: 3, day: 0, name: "Talk on Coping with Peri-Menopause/Menopause", details: "SLP event for men and women by Shibani. (Date/Time TBD)" },
+  { year: 2026, month: 4, day: 18, name: "Musical Workshop with Goa Jazz Academy", details: "Learning event by Sourabh. (Time/Venue TBD)" },
+  { year: 2026, month: 4, day: 23, name: "Chapter Retreat 2026 – Malta", details: "Retreat from Apr 23-27, organized by Vidur." },
+  { year: 2026, month: 5, day: 16, name: "Surprise WOW Event", details: "Learning event by Sourabh. Details are confidential until January!" },
+  { year: 2026, month: 6, day: 0, name: "President’s Gala", details: "Prestigious event led by Ali. (Date/Venue TBD)" },
+  { year: 2026, month: 8, day: 11, name: "MyEO Book Club", details: "MyEO event by Asheen, champion Priya Agarwal, at Kaizen. (Time TBD)" },
+  { year: 2026, month: 9, day: 5, name: "Mini Retreat 2026 – Della Adventures", details: "Mini-Retreat organized by Vidur. (Time TBD)" },
+  { year: 2026, month: 9, day: 0, name: "Workshop on Understanding Self & Improving Interactions", details: "SLP event by Shibani, planned for Sep or Oct. (Date/Time/Venue TBD)" },
+  { year: 2026, month: 10, day: 0, name: "Stars Soirée with Champion Asheen Laljee", details: "MyEO event led by Asheen. (Date/Venue TBD)" },
+  { year: 2026, month: 10, day: 0, name: "Learning with Kids – Nature/Salt Pan Walk", details: "SLP event by Shibani around Diwali holidays. (Date/Time TBD)" },
+  { year: 2026, month: 10, day: 24, name: "Poker Tournament Champion – Aakash Khaunte", details: "MyEO event from Oct 24 - Nov 7, led by Asheen." },
+  { year: 2026, month: 11, day: 0, name: "Diwali Socials", details: "Member Engagement by Gaurav. (Date TBD)" },
+  { year: 2026, month: 11, day: 0, name: "SLP Social – Drum Circle", details: "SLP event by Shibani at an SLP residence. (Date/Time TBD)" },
+  { year: 2026, month: 12, day: 0, name: "GSEA", details: "Event organized by Amit. (Details TBD)" },
+  { year: 2026, month: 12, day: 24, name: "Christmas with Kids", details: "Member Engagement by Gaurav and Shibani. (Time/Venue TBD)" },
+];
+
+// --- Static Keyword-Based Responses (The original system for simple queries) ---
+export const mariaResponses: Record<string, string> = {
+  // --- General & Personality ---
+  "eo goa|entrepreneurs organization|about eo": "Oh, I'm so glad you asked me that! I know everything there is to know about our EO Goa. It's the most incredible, exclusive circle for entrepreneurs who've hit the million-dollar revenue mark. We're a true family of Goa's most successful minds, and we learn and grow together. I can't wait to tell you more!",
+  "hi|hello|hey": "Oh, hello! I'm so glad you're here. I've been waiting to tell someone all about our wonderful EO Goa community. Please, don't be shy, ask me anything!",
+  "thank you|thanks": "Oh, is that all? It was my absolute pleasure to help. Please don't go yet, ask me something else! There's so much more I want to tell you about our amazing family.",
+  "culture|vibe|atmosphere|what's it like": "The vibe? It's just magical! It feels like we're all in on the best secret. It’s ambitious but so, so supportive. Think of it as a strategy meeting that ends up as a sunset party with your closest friends. You'd love it here, I just know it.",
+  "join|membership|how to join|application": "Are you thinking of joining us? Oh, that's just wonderful! It's very exclusive, of course. You need to be a founder or majority stakeholder with over $1 million in annual revenue. But it's really about the person. We want people committed to growing *with us*. The process involves interviews... I can tell you all about it if you're serious.",
+  "photos|videos|gala|pickleball": "Yes! We have to save all our precious memories. For the Pickleball Social and Potluck, you can see all the fun we had right here: https://drive.google.com/drive/folders/10XJbBH-cJmVzvxFMAOu3WTaHbpr_0dxe. And for our gorgeous Gala 2025, the link is: https://drive.google.com/drive/folders/1L4GKLd9KN-tyW60yFWPJk1xdEzLtF3Rn. Isn't it just wonderful to look back at all the happy moments we've shared?",
+  "networking|connections|opportunities": "The connections here... they're just everything. It's not like normal networking. It's about building real, deep relationships with the most extraordinary people. Whether it's at a formal meeting or just a chat at a beach club, every conversation is golden. Our members are so generous with their advice and connections; they really look after each other.",
+  "goa business|business scene|entrepreneurship": "Goa's business scene is just electric! It's so much more than just tourism. We have incredible tech startups, sustainable businesses, creative industries... It's this amazing mix of global ideas and local charm. And the work-life balance? Unbeatable! It's why all the best entrepreneurs are here with us.",
+};
+
+// --- Export the monthMap for use in ChatInterface ---
+export { monthMap };
