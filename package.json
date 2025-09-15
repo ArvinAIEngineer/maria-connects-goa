@@ -1,14 +1,35 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "maria-connects-goa",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Maria Connects Goa - Your AI guide to the Entrepreneurs' Organization in Goa",
+  "author": "EO Goa",
+  "license": "MIT",
+  "homepage": "https://maria-connects-goa.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArvinAIEngineer/maria-connects-goa.git"
+  },
+  "keywords": [
+    "EO Goa",
+    "AI assistant",
+    "entrepreneurs",
+    "chatbot",
+    "React",
+    "TypeScript"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build:analyze": "vite build --mode production && npx vite-bundle-analyzer dist/stats.html",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "deploy": "npm run build && npm run preview"
   },
   "dependencies": {
     "@google/generative-ai": "^0.15.0",

@@ -3,19 +3,17 @@ import { ChatInterface } from "@/components/chat/ChatInterface";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-sunset">
-      <div className="container mx-auto px-4 py-8">
-        <main className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-main">
+      <div className="container mx-auto px-4 py-12">
+        <main className="max-w-5xl mx-auto flex flex-col items-center">
           <HeroSection />
-          
-          <div className="grid lg:grid-cols-1 gap-8">
-            <div className="w-full max-w-3xl mx-auto">
-              <ChatInterface />
-            </div>
+
+          <div className="w-full max-w-4xl">
+            <ChatInterface />
           </div>
-          
-          <footer className="mt-16 text-center text-muted-foreground">
-            <p className="text-sm">
+
+          <footer className="mt-20 text-center">
+            <p className="text-sm text-muted-foreground">
               © 2024 EO Goa. Bringing together Goa's most sophisticated entrepreneurs.
             </p>
           </footer>

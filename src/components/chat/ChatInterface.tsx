@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send } from "lucide-react";
+import { Send, Calendar, Users, Info, Sparkles } from "lucide-react";
 import { ChatBubble } from "./ChatBubble";
 import { TypingIndicator } from "./TypingIndicator";
 import { QuickSuggestions } from "./QuickSuggestions";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { MessageSkeleton } from "@/components/ui/message-skeleton";
 import { getLlmResponse } from "@/lib/llm";
 
 interface Message {
@@ -14,24 +16,59 @@ interface Message {
   timestamp: string;
 }
 
-// For converting message state to LLM history format
 interface LlmHistoryPart {
   role: 'user' | 'model';
   parts: { text: string }[];
 }
 
-const quickSuggestions = [
-  "What's happening in July 2025?",
-  "Tell me about the Malta retreat",
-  "Who has a birthday in March?",
-  "How do I join?",
+const categorizedSuggestions = [
+  {
+    category: "Upcoming Events",
+    icon: <Calendar className="w-4 h-4 text-primary" />,
+    items: [
+      "What events are happening in July 2025?",
+      "Tell me about the Malta retreat in April",
+      "What's the surprise WOW event in May?",
+      "Show me all 2025 learning workshops"
+    ]
+  },
+  {
+    category: "Member Celebrations",
+    icon: <Users className="w-4 h-4 text-accent" />,
+    items: [
+      "Who has birthdays in March?",
+      "Show me anniversaries this month",
+      "List all member children's birthdays",
+      "What celebrations are coming up?"
+    ]
+  },
+  {
+    category: "Membership & Community",
+    icon: <Info className="w-4 h-4 text-secondary" />,
+    items: [
+      "How do I join EO Goa?",
+      "What are the membership requirements?",
+      "Tell me about the EO Goa community",
+      "What makes EO Goa special?"
+    ]
+  },
+  {
+    category: "Special Activities",
+    icon: <Sparkles className="w-4 h-4 text-muted-foreground" />,
+    items: [
+      "What are SLP events?",
+      "Tell me about MyEO activities",
+      "Show me family-friendly events",
+      "What learning opportunities are available?"
+    ]
+  }
 ];
 
 export const ChatInterface = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hello! I'm so glad you're here. I've been waiting to tell someone all about our wonderful EO Goa community. Please, don't be shy, ask me anything!",
+      text: "Hello! I'm Maria, your dedicated guide to the EO Goa community. I'm here to help you discover upcoming events, member celebrations, membership information, and all the exciting activities our entrepreneurial family has to offer. How can I assist you today?",
       isUser: false,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
@@ -64,15 +101,13 @@ export const ChatInterface = () => {
     setShowSuggestions(false);
     setIsTyping(true);
 
-    // Prepare history for the LLM
     const history: LlmHistoryPart[] = messages
-      .slice(1) // remove initial greeting
+      .slice(1)
       .map(msg => ({
         role: msg.isUser ? 'user' : 'model',
         parts: [{ text: msg.text }],
       }));
 
-    // Get response from the LLM
     const responseText = await getLlmResponse(messageText, history);
     
     const mariaResponse: Message = {
@@ -91,15 +126,30 @@ export const ChatInterface = () => {
   };
 
   return (
-    <div className="flex flex-col h-full max-h-[600px] bg-gradient-elegant rounded-3xl shadow-elegant overflow-hidden">
-      <div className="bg-gradient-header p-4 border-b border-border/50">
+    <div
+      className="flex flex-col h-full max-h-[700px] md:max-h-[800px] bg-gradient-card rounded-3xl shadow-elegant overflow-hidden border border-border/20 backdrop-blur-sm"
+      role="main"
+      aria-label="Chat interface with Maria"
+    >
+      <div className="bg-gradient-header p-4 md:p-6 border-b border-border/10">
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 bg-accent rounded-full animate-glow"></div>
-          <h3 className="font-medium text-foreground">Chat with Maria</h3>
+          <div
+            className="w-3 h-3 bg-primary rounded-full animate-glow"
+            aria-hidden="true"
+          ></div>
+          <h1 className="font-semibold text-foreground text-lg">Chat with Maria</h1>
+          <div className="ml-auto text-xs text-muted-foreground hidden md:block">
+            AI Assistant
+          </div>
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div
+        className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6"
+        role="log"
+        aria-live="polite"
+        aria-label="Chat messages"
+      >
         {messages.map((message) => (
           <ChatBubble
             key={message.id}
@@ -108,39 +158,68 @@ export const ChatInterface = () => {
             timestamp={message.timestamp}
           />
         ))}
-        
-        {isTyping && <TypingIndicator />}
-        
+
+        {isTyping && (
+          <div aria-live="polite" aria-label="Maria is typing">
+            <TypingIndicator />
+          </div>
+        )}
+
         {showSuggestions && !isTyping && (
-          <div className="animate-fade-in-up">
-            <p className="text-sm text-muted-foreground mb-3 font-medium">Try asking me:</p>
+          <div className="animate-fade-in-up space-y-4 md:space-y-6">
+            <div className="text-center px-4">
+              <h2 className="text-lg md:text-xl font-medium text-foreground mb-2">What would you like to know?</h2>
+              <p className="text-sm text-muted-foreground">Choose a topic below or ask me anything</p>
+            </div>
             <QuickSuggestions
-              suggestions={quickSuggestions}
+              suggestions={categorizedSuggestions}
               onSuggestionClick={handleSuggestionClick}
             />
           </div>
         )}
-        
-        <div ref={messagesEndRef} />
+
+        <div ref={messagesEndRef} aria-hidden="true" />
       </div>
 
-      <div className="p-4 border-t border-border/50 bg-gradient-header">
-        <div className="flex gap-2">
-          <Input
-            value={currentMessage}
-            onChange={(e) => setCurrentMessage(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-            placeholder="Ask me anything about EO Goa..."
-            className="flex-1 bg-background/80 border-primary/20 focus:border-primary shadow-chat"
-          />
-          <Button
-            onClick={() => handleSendMessage()}
-            disabled={!currentMessage.trim() || isTyping}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant"
+      <div className="p-4 md:p-6 border-t border-border/10 bg-gradient-header">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSendMessage();
+          }}
+          className="space-y-2"
+        >
+          <div className="flex gap-2 md:gap-3">
+            <Input
+              value={currentMessage}
+              onChange={(e) => setCurrentMessage(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
+              placeholder="Type your message here..."
+              className="flex-1 bg-background border-border/20 focus:border-primary shadow-sm rounded-2xl px-4 py-3 text-base transition-all resize-none"
+              aria-label="Type your message to Maria"
+              aria-describedby="input-help"
+              disabled={isTyping}
+            />
+            <Button
+              type="submit"
+              disabled={!currentMessage.trim() || isTyping}
+              className="bg-gradient-button hover:shadow-lg text-white shadow-md rounded-2xl px-4 md:px-6 py-3 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label={isTyping ? "Sending message" : "Send message"}
+            >
+              {isTyping ? (
+                <LoadingSpinner size="sm" className="text-white" />
+              ) : (
+                <Send className="w-4 h-4 md:w-5 md:h-5" />
+              )}
+            </Button>
+          </div>
+          <div
+            id="input-help"
+            className="text-xs text-muted-foreground text-center md:text-left"
           >
-            <Send className="w-4 h-4" />
-          </Button>
-        </div>
+            Press Enter to send, Shift+Enter for new line
+          </div>
+        </form>
       </div>
     </div>
   );

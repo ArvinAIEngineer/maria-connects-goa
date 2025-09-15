@@ -2,63 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Maria EO Goa Chatbot Design System 
-Sophisticated beach luxury meets business elegance
+/* Maria EO Goa Chatbot Design System
+Modern AI interface with sophisticated gradients and clean aesthetics
+Inspired by contemporary chat applications
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Luxury Goa-inspired color palette */
-    --background: 35 45% 97%;
-    --foreground: 25 15% 25%;
+    /* Modern neutral base palette */
+    --background: 240 10% 98%;
+    --foreground: 240 10% 15%;
 
-    --card: 35 35% 95%;
-    --card-foreground: 25 15% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
 
-    --popover: 35 35% 95%;
-    --popover-foreground: 25 15% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
 
-    /* Rose gold primary */
-    --primary: 15 45% 75%;
-    --primary-foreground: 35 45% 97%;
+    /* Modern purple primary inspired by reference */
+    --primary: 280 100% 70%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Champagne secondary */
-    --secondary: 35 25% 88%;
-    --secondary-foreground: 25 15% 25%;
+    /* Soft secondary */
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 15%;
 
-    /* Coral accent */
-    --accent: 5 75% 75%;
-    --accent-foreground: 35 45% 97%;
+    /* Vibrant accent */
+    --accent: 320 100% 75%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Sophisticated muted tones */
-    --muted: 35 15% 92%;
-    --muted-foreground: 25 10% 55%;
+    /* Refined muted tones */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 35 45% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 88%;
-    --input: 35 25% 90%;
-    --ring: 15 45% 75%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 280 100% 70%;
 
-    /* Chat-specific colors */
-    --chat-bubble-user: 15 45% 75%;
-    --chat-bubble-user-foreground: 35 45% 97%;
-    --chat-bubble-maria: 35 35% 95%;
-    --chat-bubble-maria-foreground: 25 15% 25%;
+    /* Enhanced chat-specific colors */
+    --chat-bubble-user: 280 100% 70%;
+    --chat-bubble-user-foreground: 0 0% 100%;
+    --chat-bubble-maria: 0 0% 100%;
+    --chat-bubble-maria-foreground: 240 10% 15%;
 
-    /* Luxury gradients with better contrast */
-    --gradient-sunset: linear-gradient(135deg, hsl(15 35% 25%), hsl(5 45% 35%), hsl(25 25% 45%));
-    --gradient-elegant: linear-gradient(135deg, hsl(35 35% 95%), hsl(35 25% 88%));
-    --gradient-header: linear-gradient(180deg, hsl(35 25% 88%), hsl(35 35% 92%));
+    /* Modern gradient system */
+    --gradient-main: linear-gradient(135deg, hsl(240 10% 98%) 0%, hsl(250 20% 95%) 100%);
+    --gradient-orb: radial-gradient(circle, hsl(280 100% 70%) 0%, hsl(320 100% 75%) 50%, hsl(280 100% 70%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(240 5% 98%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(280 100% 70%) 0%, hsl(320 100% 75%) 100%);
+    --gradient-elegant: linear-gradient(135deg, hsl(0 0% 100%), hsl(240 5% 96%));
+    --gradient-header: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 5% 98%));
 
-    /* Sophisticated shadows */
-    --shadow-elegant: 0 4px 20px hsl(15 45% 75% / 0.15);
-    --shadow-chat: 0 2px 12px hsl(25 15% 25% / 0.08);
-    --shadow-glow: 0 0 30px hsl(15 65% 80% / 0.3);
+    /* Modern shadow system */
+    --shadow-sm: 0 1px 2px hsl(240 10% 15% / 0.05);
+    --shadow-md: 0 4px 6px hsl(240 10% 15% / 0.07);
+    --shadow-lg: 0 10px 15px hsl(240 10% 15% / 0.1);
+    --shadow-xl: 0 20px 25px hsl(240 10% 15% / 0.1);
+    --shadow-elegant: 0 8px 32px hsl(280 100% 70% / 0.12);
+    --shadow-chat: 0 2px 8px hsl(240 10% 15% / 0.06);
+    --shadow-glow: 0 0 40px hsl(280 100% 70% / 0.3);
+    --shadow-orb: 0 8px 32px hsl(280 100% 70% / 0.4);
 
-    --radius: 1rem;
+    --radius: 1.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -148,4 +157,191 @@ All colors MUST be HSL.
 .markdown-content strong {
   font-weight: 600;
   color: hsl(var(--foreground));
+}
+
+/* Modern Animation System */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes orb-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(240deg);
+  }
+}
+
+@keyframes button-press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+.animate-typing {
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.animate-glow {
+  animation: glow-pulse 2s infinite ease-in-out;
+}
+
+.animate-orb-float {
+  animation: orb-float 6s infinite ease-in-out;
+}
+
+.animate-button-press {
+  animation: button-press 0.15s ease-out;
+}
+
+/* Modern Utility Classes */
+.bg-gradient-main {
+  background: var(--gradient-main);
+}
+
+.bg-gradient-orb {
+  background: var(--gradient-orb);
+}
+
+.bg-gradient-card {
+  background: var(--gradient-card);
+}
+
+.bg-gradient-button {
+  background: var(--gradient-button);
+}
+
+.bg-gradient-elegant {
+  background: var(--gradient-elegant);
+}
+
+.bg-gradient-header {
+  background: var(--gradient-header);
+}
+
+.shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+.shadow-chat {
+  box-shadow: var(--shadow-chat);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.shadow-orb {
+  box-shadow: var(--shadow-orb);
+}
+
+/* Glass morphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-colors {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
