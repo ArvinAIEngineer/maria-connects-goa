@@ -6,20 +6,7 @@ import { ChatBubble } from "./ChatBubble";
 import { TypingIndicator } from "./TypingIndicator";
 import { QuickSuggestions } from "./QuickSuggestions";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
-import { MessageSkeleton } from "@/components/ui/message-skeleton";
-import { getLlmResponse } from "@/lib/llm";
-
-interface Message {
-  id: string;
-  text: string;
-  isUser: boolean;
-  timestamp: string;
-}
-
-interface LlmHistoryPart {
-  role: 'user' | 'model';
-  parts: { text: string }[];
-}
+import useChatStore from "@/store/useChatStore";
 
 const categorizedSuggestions = [
   {
@@ -65,16 +52,8 @@ const categorizedSuggestions = [
 ];
 
 export const ChatInterface = () => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "1",
-      text: "Hello! I'm Maria, your dedicated guide to the EO Goa community. I'm here to help you discover upcoming events, member celebrations, membership information, and all the exciting activities our entrepreneurial family has to offer. How can I assist you today?",
-      isUser: false,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    },
-  ]);
   const [currentMessage, setCurrentMessage] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const { messages, isLoading, sendMessage } = useChatStore();
   const [showSuggestions, setShowSuggestions] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -84,41 +63,13 @@ export const ChatInterface = () => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, isTyping]);
-  
+  }, [messages, isLoading]);
+
   const handleSendMessage = async (messageText: string = currentMessage) => {
     if (!messageText.trim()) return;
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: messageText,
-      isUser: true,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    setCurrentMessage("");
     setShowSuggestions(false);
-    setIsTyping(true);
-
-    const history: LlmHistoryPart[] = messages
-      .slice(1)
-      .map(msg => ({
-        role: msg.isUser ? 'user' : 'model',
-        parts: [{ text: msg.text }],
-      }));
-
-    const responseText = await getLlmResponse(messageText, history);
-    
-    const mariaResponse: Message = {
-      id: (Date.now() + 1).toString(),
-      text: responseText,
-      isUser: false,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    };
-
-    setMessages(prev => [...prev, mariaResponse]);
-    setIsTyping(false);
+    setCurrentMessage("");
+    await sendMessage(messageText);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -159,13 +110,13 @@ export const ChatInterface = () => {
           />
         ))}
 
-        {isTyping && (
+        {isLoading && (
           <div aria-live="polite" aria-label="Maria is typing">
             <TypingIndicator />
           </div>
         )}
 
-        {showSuggestions && !isTyping && (
+        {showSuggestions && !isLoading && (
           <div className="animate-fade-in-up space-y-4 md:space-y-6">
             <div className="text-center px-4">
               <h2 className="text-lg md:text-xl font-medium text-foreground mb-2">What would you like to know?</h2>
@@ -193,20 +144,25 @@ export const ChatInterface = () => {
             <Input
               value={currentMessage}
               onChange={(e) => setCurrentMessage(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSendMessage();
+                }
+              }}
               placeholder="Type your message here..."
               className="flex-1 bg-background border-border/20 focus:border-primary shadow-sm rounded-2xl px-4 py-3 text-base transition-all resize-none"
               aria-label="Type your message to Maria"
               aria-describedby="input-help"
-              disabled={isTyping}
+              disabled={isLoading}
             />
             <Button
               type="submit"
-              disabled={!currentMessage.trim() || isTyping}
+              disabled={!currentMessage.trim() || isLoading}
               className="bg-gradient-button hover:shadow-lg text-white shadow-md rounded-2xl px-4 md:px-6 py-3 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label={isTyping ? "Sending message" : "Send message"}
+              aria-label={isLoading ? "Sending message" : "Send message"}
             >
-              {isTyping ? (
+              {isLoading ? (
                 <LoadingSpinner size="sm" className="text-white" />
               ) : (
                 <Send className="w-4 h-4 md:w-5 md:h-5" />

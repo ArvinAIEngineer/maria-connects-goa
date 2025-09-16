@@ -1,9 +1,9 @@
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 import { knowledgeBase } from '@/components/chat/mariaKnowledge';
-import { getEventsInfo, getBirthdaysAndAnniversariesInfo, getPhotoLinks } from './dataService';
+import { getMembers, getEvents, getRestaurantOffers } from './dataService';
+import { getCurrentDate } from './temporal';
 import { config, isDev } from './config';
 
-// Initialize Google Generative AI with validated configuration
 let genAI: GoogleGenerativeAI;
 try {
   genAI = new GoogleGenerativeAI(config.geminiApiKey);
@@ -35,7 +35,6 @@ const safetySettings = [
 ];
 
 export async function getLlmResponse(userQuery: string, chatHistory: { role: string, parts: { text: string }[] }[]): Promise<string> {
-  // Input validation
   if (!userQuery || typeof userQuery !== 'string' || userQuery.trim().length === 0) {
     return "I'd be happy to help! Please ask me a question about EO Goa.";
   }
@@ -44,27 +43,23 @@ export async function getLlmResponse(userQuery: string, chatHistory: { role: str
     return "That's quite a detailed question! Could you please make it a bit shorter so I can help you better?";
   }
 
+  const contactQueryRegex = /contact|get in touch|connect with/i;
+  if (contactQueryRegex.test(userQuery)) {
+    return "Pls contact Vidhya @ +91 83809 44999 our chapter manager for any query you may have.";
+  }
+
   try {
-    // Load data with timeout and error handling
-    const dataPromises = [
-      getEventsInfo(),
-      getBirthdaysAndAnniversariesInfo(),
-      getPhotoLinks(),
-    ];
-
-    const timeoutPromise = new Promise<never>((_, reject) => {
-      setTimeout(() => reject(new Error('Data loading timeout')), 5000);
-    });
-
-    const [eventsInfo, birthdaysAndAnniversariesInfo, photoLinks] = await Promise.race([
-      Promise.all(dataPromises),
-      timeoutPromise
+    const [members, events, restaurantOffers] = await Promise.all([
+      getMembers(),
+      getEvents(),
+      getRestaurantOffers(),
     ]);
 
     const populatedKnowledgeBase = knowledgeBase
-      .replace(/\$\{eventsInfo\}/g, eventsInfo)
-      .replace(/\$\{birthdaysAndAnniversariesInfo\}/g, birthdaysAndAnniversariesInfo)
-      .replace(/\$\{photoLinks\}/g, photoLinks);
+      .replace(/\$\{JSON\.stringify\(members, null, 2\)\}/g, JSON.stringify(members, null, 2))
+      .replace(/\$\{JSON\.stringify\(events, null, 2\)\}/g, JSON.stringify(events, null, 2))
+      .replace(/\$\{JSON\.stringify\(restaurantOffers, null, 2\)\}/g, JSON.stringify(restaurantOffers, null, 2))
+      .replace(/\$\{"2025-09-17"\}/g, getCurrentDate().toISOString().split('T')[0]);
 
     const chatSession = model.startChat({
       generationConfig,
@@ -78,7 +73,7 @@ export async function getLlmResponse(userQuery: string, chatHistory: { role: str
           role: "model",
           parts: [{ text: "Understood. I am Maria, the AI guide for EO Goa. I will answer questions based only on the provided context and maintain my enthusiastic, insider personality. I am ready to help!" }],
         },
-        ...chatHistory.slice(-10), // Limit history to last 10 messages for performance
+        ...chatHistory.slice(-10),
       ],
     });
 
@@ -86,7 +81,7 @@ export async function getLlmResponse(userQuery: string, chatHistory: { role: str
     const response = result.response.text();
 
     if (!response || response.trim().length === 0) {
-      return "I apologize, but I'm having trouble generating a response right now. Could you please try rephrasing your question?";
+      return "Pls contact Vidhya @ +91 83809 44999 our chapter manager for any query you may have.";
     }
 
     return response;
@@ -94,22 +89,18 @@ export async function getLlmResponse(userQuery: string, chatHistory: { role: str
   } catch (error) {
     console.error("Error in getLlmResponse:", error);
 
-    // Specific error handling
     if (error instanceof Error) {
       if (error.message.includes('API key')) {
         return "I'm experiencing some configuration issues. Please contact support if this persists.";
       }
-
       if (error.message.includes('quota') || error.message.includes('limit')) {
         return "I'm currently experiencing high demand. Please try again in a few moments.";
       }
-
-      if (error.message.includes('timeout') || error.message.includes('network')) {
+      if (error.message.includes('network')) {
         return "I'm having trouble connecting right now. Please check your internet connection and try again.";
       }
     }
 
-    // Generic fallback
     return "I apologize, but I'm experiencing some technical difficulties. Please try asking your question again in a moment.";
   }
 }

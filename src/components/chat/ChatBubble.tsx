@@ -26,7 +26,7 @@ export const ChatBubble = ({ message, isUser, timestamp }: ChatBubbleProps) => {
         }`}
       >
         <div className="text-sm md:text-base leading-relaxed markdown-content">
-            <ReactMarkdown>{message}</ReactMarkdown>
+          <ReactMarkdown>{message}</ReactMarkdown>
         </div>
         {timestamp && (
           <p className={`text-xs mt-2 ${isUser ? 'text-white/70' : 'text-muted-foreground'}`}>
